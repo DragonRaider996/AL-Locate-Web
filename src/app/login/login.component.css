@@ -1,0 +1,13 @@
+.card-center{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ECEFF1;
+}
+
+.card{
+  margin: 50px;
+  min-width: 40%;
+}
+
