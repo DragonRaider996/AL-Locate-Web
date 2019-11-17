@@ -13,7 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {
   MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatMenuModule,
-  MatToolbarModule, MatIconModule, MatSnackBarModule, MatProgressSpinnerModule
+  MatToolbarModule, MatIconModule, MatSnackBarModule, MatProgressSpinnerModule,
+  MatGridListModule, MatRippleModule
 } from '@angular/material';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -42,7 +43,9 @@ import { BannerComponent } from './banner/banner.component';
     MatToolbarModule,
     MatIconModule,
     MatSnackBarModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatGridListModule,
+    MatRippleModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true },
