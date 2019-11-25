@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   private password: string;
   private error = '';
   private disabled: boolean = false;
+  //private envVariable = process.env.variable;
 
   constructor(private authenticationService: AuthenticationService, private router: Router,
     private snackbar: MatSnackBar) { }
@@ -23,6 +24,7 @@ export class LoginComponent implements OnInit {
     if (currentUser) {
       this.router.navigate(["/home"]);
     }
+    //console.log(this.envVariable);
   }
 
   public onLogin() {

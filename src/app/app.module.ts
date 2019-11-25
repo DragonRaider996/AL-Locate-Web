@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,11 +15,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatMenuModule,
   MatToolbarModule, MatIconModule, MatSnackBarModule, MatProgressSpinnerModule,
-  MatGridListModule, MatRippleModule
+  MatGridListModule, MatRippleModule, MatDialogModule, MatSelectModule,
+  MatTableModule
 } from '@angular/material';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BannerComponent } from './banner/banner.component';
+import { CreateTransferComponent } from './create-transfer/create-transfer.component';
+import { TransferHistoryComponent } from './transfer-history/transfer-history.component';
+import { TrackTransferComponent } from './track-transfer/track-transfer.component';
+import { StatsComponent } from './stats/stats.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +32,11 @@ import { BannerComponent } from './banner/banner.component';
     LoginComponent,
     HomeComponent,
     NavbarComponent,
-    BannerComponent
+    BannerComponent,
+    CreateTransferComponent,
+    TransferHistoryComponent,
+    TrackTransferComponent,
+    StatsComponent
   ],
   imports: [
     CommonModule,
@@ -35,6 +45,7 @@ import { BannerComponent } from './banner/banner.component';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
@@ -45,12 +56,16 @@ import { BannerComponent } from './banner/banner.component';
     MatSnackBarModule,
     MatProgressSpinnerModule,
     MatGridListModule,
-    MatRippleModule
+    MatRippleModule,
+    MatDialogModule,
+    MatSelectModule,
+    MatTableModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: RequestErrorInterceptor, multi: true }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [CreateTransferComponent]
 })
 export class AppModule { }

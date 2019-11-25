@@ -1,0 +1,34 @@
+<div class="spinner-center" *ngIf="loadingData">
+  <mat-spinner></mat-spinner>
+</div>
+<div style="margin: 25px;" [hidden]="loadingData">
+  <mat-table [dataSource]="transferData" class="mat-elevation-z8">
+    <ng-container matColumnDef="transferId">
+      <mat-header-cell *matHeaderCellDef> Transfer ID </mat-header-cell>
+      <mat-cell *matCellDef="let transfer"> {{transfer.transferId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="fromHospital">
+      <mat-header-cell *matHeaderCellDef> From Hospital </mat-header-cell>
+      <mat-cell *matCellDef="let transfer"> {{transfer.fromHospital}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="toHospital">
+      <mat-header-cell *matHeaderCellDef> To Hospital </mat-header-cell>
+      <mat-cell *matCellDef="let transfer"> {{transfer.toHospital}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="patientName">
+      <mat-header-cell *matHeaderCellDef> Patient Name </mat-header-cell>
+      <mat-cell *matCellDef="let transfer"> {{transfer.patientName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="patientAge">
+      <mat-header-cell *matHeaderCellDef> Patient Age</mat-header-cell>
+      <mat-cell *matCellDef="let transfer"> {{transfer.patientAge}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
