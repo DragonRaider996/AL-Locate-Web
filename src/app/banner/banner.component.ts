@@ -35,4 +35,8 @@ export class BannerComponent implements OnInit {
     this.router.navigate(["/stats"]);
   }
 
+  public onTrackTransfer() {
+    this.router.navigate(["/track"]);
+  }
+
 }
