@@ -1,0 +1,19 @@
+<div fxLayout="column" fxLayoutAlign="center center" style="margin:20px">
+  <div style="width: 70%;">
+    <mat-form-field style="width: 100%;">
+      <input (keydown.enter)="onTrack()" type="number" [(ngModel)]="transferId" matInput placeholder="Transfer ID">
+    </mat-form-field>
+  </div>
+  <div>
+    <button [disabled]="disabled" mat-flat-button (click)="onTrack()" color="primary" style="color: white;">
+      <mat-spinner *ngIf="disabled" color="accent" diameter="15" style="display: inline-block;margin-right: 10px;">
+      </mat-spinner>Track
+    </button>
+  </div>
+</div>
+
+<div style="margin: 20px;" *ngIf="show">
+  <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
+</div>

@@ -8,7 +8,7 @@ import { User } from '../models/user.model';
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<User>;
-  private loginURL: string = "http://localhost:3000/login"
+  private loginURL: string = "https://accordallocate.herokuapp.com/login"
   public currentUser: Observable<User>;
 
   constructor(private http: HttpClient) {

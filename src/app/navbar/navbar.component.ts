@@ -19,4 +19,25 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(["/login"]);
   }
 
+  isHome() {
+    return this.router.url.endsWith("home");
+  }
+
+  getTitle() {
+    if (this.router.url.endsWith("transfer")) {
+      return "History of Transfer";
+    } else if (this.router.url.endsWith("track")) {
+      return "Track a Transfer";
+    } else if (this.router.url.endsWith("stats")) {
+      return "Hospital Statistics";
+    }
+    else {
+      return "Al-Locate";
+    }
+  }
+
+  backArrowClicked() {
+    this.router.navigate(["/home"]);
+  }
+
 }

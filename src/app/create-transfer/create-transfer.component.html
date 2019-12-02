@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>Create a Transfer</h1>
+<div mat-dialog-content>
+  <form style="width: 100%;">
+    <mat-form-field style="width: 100%; margin: 10px;">
+      <mat-label>To Hospital</mat-label>
+      <mat-select [(value)]="selectedHospital" name="hospital">
+        <mat-option *ngFor="let hospital of hospitalData" [value]="hospital.id">
+          {{hospital.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field style="width: 100%; margin: 10px;">
+      <input matInput placeholder="Patient Name" [(ngModel)]="patientName" name="patientName">
+    </mat-form-field>
+    <mat-form-field style="width: 100%; margin: 10px;">
+      <input matInput placeholder="Patient Age" type="number" [(ngModel)]="patientAge" name="patientAge">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button [disabled]="disabled" mat-flat-button (click)="createTransfer()" color="primary" style="color: white;">
+    <mat-spinner *ngIf="disabled" color="accent" diameter="15" style="display: inline-block;margin-right: 10px;">
+    </mat-spinner>Create
+  </button>
+</div>

@@ -1,6 +1,9 @@
 <mat-toolbar color="primary" style="color: white;">
   <mat-toolbar-row>
-    <span style="margin-left:30px;">Al-Locate</span>
+    <button mat-button *ngIf="!isHome()" (click)="backArrowClicked()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span style="margin-left:30px;">{{getTitle()}}</span>
     <span style="flex: 1 1 auto"></span>
     <button mat-button [matMenuTriggerFor]="user">
       <mat-icon>person</mat-icon>
