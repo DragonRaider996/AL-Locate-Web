@@ -8,9 +8,9 @@ import { TransferService } from '../services/transfer.service';
   styleUrls: ['./transfer-history.component.css']
 })
 export class TransferHistoryComponent implements OnInit {
-  private transferData: TransferHistory[] = [];
-  private displayedColumns = ["transferId", "fromHospital", "toHospital", "patientName", "patientAge"]
-  private loadingData: boolean = true;
+  transferData: TransferHistory[] = [];
+  displayedColumns = ["transferId", "fromHospital", "toHospital", "patientName", "patientAge"]
+  loadingData: boolean = true;
 
   constructor(private transferService: TransferService) { }
 

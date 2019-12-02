@@ -4,7 +4,7 @@ import { map } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class TrackService {
-  private transferURL: string = "http://localhost:3000/transfer/track/";
+  private transferURL: string = "https://accordallocate.herokuapp.com/transfer/track/";
 
   constructor(private http: HttpClient) { }
 

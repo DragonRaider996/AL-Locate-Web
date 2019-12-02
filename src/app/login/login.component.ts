@@ -10,10 +10,10 @@ import { Directionality } from '@angular/cdk/bidi';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  private username: string;
-  private password: string;
-  private error = '';
-  private disabled: boolean = false;
+  username: string;
+  password: string;
+  error = '';
+  disabled: boolean = false;
   //private envVariable = process.env.variable;
 
   constructor(private authenticationService: AuthenticationService, private router: Router,

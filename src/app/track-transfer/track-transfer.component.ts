@@ -12,12 +12,12 @@ import { switchMap } from 'rxjs/operators';
 })
 export class TrackTransferComponent implements OnInit, OnDestroy {
 
-  private lat = 51.678418;
-  private lng = 7.809007;
-  private disabled: boolean = false;
-  private show: boolean = false;
-  private transferId: number;
-  private subscription: Subscription = new Subscription();
+  lat = 51.678418;
+  lng = 7.809007;
+  disabled: boolean = false;
+  show: boolean = false;
+  transferId: number;
+  subscription: Subscription = new Subscription();
 
   constructor(private trackService: TrackService, private snackbar: MatSnackBar) { }
 
@@ -33,11 +33,18 @@ export class TrackTransferComponent implements OnInit, OnDestroy {
     this.subscription = timer(0, 10000).pipe(
       switchMap(() => this.trackService.getTrackHistory(this.transferId))
     ).subscribe((data: TrackTransfer) => {
-      console.log("Data");
-      console.log(data);
-      this.lat = data.latitude;
-      this.lng = data.longitude;
-      this.show = true;
+      if (data.latitude) {
+        console.log("Data");
+        console.log(data);
+        this.lat = data.latitude;
+        this.lng = data.longitude;
+        this.show = true;
+      } else {
+        this.snackbar.open("Transfer has not been yet initiated", '', {
+          duration: 4000
+        })
+        this.show = false;
+      }
     }, (error) => {
       this.snackbar.open("Invalid Transfer ID", '', {
         duration: 4000

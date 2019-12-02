@@ -5,8 +5,8 @@ import { map } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class TransferService {
-  private transferURL: string = "http://localhost:3000/transfer";
-  private statsURL: string = "http://localhost:3000/hospital/stats";
+  private transferURL: string = "https://accordallocate.herokuapp.com/transfer";
+  private statsURL: string = "https://accordallocate.herokuapp.com/hospital/stats";
   constructor(private http: HttpClient) { }
 
   createTransfer(transferData: CreateTransfer) {
