@@ -1,27 +1,34 @@
-# Frontend
+# Allocate Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
+## Completeness
+This is a fully functional prototype for the web frontend of the application. There are currently no known bugs in the application. The application is deployed to the Heroku and the URL is as follows : https://accordallocateweb.herokuapp.com. The application uses Angular which is based on Typescript and it provides the typesafety by default.
 
-## Development server
+**Intructions to run**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Clone the repository and run the following instructions:
+* npm install
+* ng serve
 
-## Code scaffolding
+Username: IWK, Password: Iwk@12345
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+In the application the track feature will not run as it requires a Google API key to run.
 
-## Build
+## Code Quality
+This application is built using the Angular framework, and it is following all the quality standards defined by the framework. Every small elements of the web application have their own components and for making the api call seperate services are built. The authentication have been implemented in a proper standard way, with a proper http interceptor which will add authorization header to every http request.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## User Experience
+The web application has been developed with two click rule, i.e every action is atmost click away. Since this web application will be used by the emergency department, our focus was to make it as minimalistic and simplistic as possible without compromising on the functionality. 
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Scalability
+This application was designed with scalability in mind. It is currently deployed on the free tier, hence it is currently slow on the first request as the application goes to sleep due to heroku policies, but subsequent request are fast. Once deployed to the paid tier, the application will perform faster.
 
-## Running end-to-end tests
+## Security
+We were focused on maintainig good security standards while developing this application. 
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Analytics
+We currently are not recording any analytics from the user. This is one of the furture scope of our application.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## References
+* https://jasonwatmore.com/post/2019/06/22/angular-8-jwt-authentication-example-tutorial
+* https://angular.io/docs
