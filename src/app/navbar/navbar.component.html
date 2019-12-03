@@ -1,0 +1,15 @@
+<mat-toolbar color="primary" style="color: white;">
+  <mat-toolbar-row>
+    <button mat-button *ngIf="!isHome()" (click)="backArrowClicked()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span style="margin-left:30px;">{{getTitle()}}</span>
+    <span style="flex: 1 1 auto"></span>
+    <button mat-button [matMenuTriggerFor]="user">
+      <mat-icon>person</mat-icon>
+    </button>
+    <mat-menu #user="matMenu">
+      <button mat-menu-item (click)="onLogout()">Logout</button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>

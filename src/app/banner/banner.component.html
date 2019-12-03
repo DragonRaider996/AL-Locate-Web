@@ -1,0 +1,47 @@
+<div fxLayout="column" fxLayoutGap.lt-sm="3%" style="margin:20px 0px 10px 0px;">
+  <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="center center" fxLayoutGap.lt-sm="3%">
+    <div fxFlex="40">
+      <mat-card class="mat-elevation-z8" matRipple style="margin: 10px; min-height: 275px;"
+        (click)="onTransferCreate()">
+        <div fxLayout="column" fxLayoutAlign="center center" style="min-height: 275px;">
+          <img style="width: 25%; max-height: 250px;" src="assets/transfer.png" />
+          <mat-card-content style="margin-bottom: 0; text-align: center; margin-top: 15px;">
+            <h2>Create a Transfer</h2>
+          </mat-card-content>
+        </div>
+      </mat-card>
+    </div>
+    <div fxFlex="40">
+      <mat-card class="mat-elevation-z8" matRipple style="margin: 10px;" (click)="onTrackTransfer()">
+        <div fxLayout="column" fxLayoutAlign="center center" style="min-height: 275px;">
+          <img style="width: 25%; max-height: 250px;" src="assets/track.png" />
+          <mat-card-content style="margin-bottom: 0; text-align: center; margin-top: 15px;">
+            <h2>Track Transfer</h2>
+          </mat-card-content>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="center center" fxLayoutGap.lt-sm="2%">
+    <div fxFlex="40">
+      <mat-card class="mat-elevation-z8" matRipple style="margin: 10px;" (click)="onTransferHistory()">
+        <div fxLayout="column" fxLayoutAlign="center center" style="min-height: 275px;">
+          <img style="width: 25%; max-height: 250px;" src="assets/history.png" />
+          <mat-card-content style="margin-bottom: 0; text-align: center; margin-top: 15px;">
+            <h2>History of Transfer</h2>
+          </mat-card-content>
+        </div>
+      </mat-card>
+    </div>
+    <div fxFlex="40">
+      <mat-card class="mat-elevation-z8" matRipple style="margin: 10px;" (click)="onStats()">
+        <div fxLayout="column" fxLayoutAlign="center center" style="min-height: 275px;">
+          <img style="width: 25%; max-height: 250px;" src="assets/graph.png" />
+          <mat-card-content style="margin-bottom: 0; text-align: center; margin-top: 15px;">
+            <h2>Statistics</h2>
+          </mat-card-content>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>
